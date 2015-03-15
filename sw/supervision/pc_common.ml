@@ -180,6 +180,7 @@ let conf_is_set = fun home ->
     Sys.file_exists (home // "conf") &&
     Sys.file_exists (home // "data")
 
+(*
 let druid = fun home ->
   let w = GWindow.window ~title:"Configuring Paparazzi" () in
 
@@ -212,11 +213,14 @@ let druid = fun home ->
   end;
   w#show ();
   GMain.main ()
+*)
 
+(*
 let _ =
   let home = Env.paparazzi_home in
   if not (conf_is_set home) then
     druid home
+*)
 
 let conf_xml_file = conf_dir // "conf.xml"
 let backup_xml_file = conf_xml_file ^ "~"
