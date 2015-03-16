@@ -8,6 +8,13 @@ before_install:
   - sudo apt-get update -q
 install:
   - sudo apt-get install paparazzi-dev paparazzi-jsbsim gcc-arm-none-eabi libipc-run-perl
+  - sudo add-apt-repository ppa:avsm/ppa -y
+  - sudo apt-get update -q
+  - sudo apt-get install opam
+  - opam init -q -n
+  - eval `opam config env`
+  - opam switch 4.01.0
+  - opam pin add paparazzi https://github.com/paparazzi/opam-paparazzi.git -y
 script:
   - make test
 
