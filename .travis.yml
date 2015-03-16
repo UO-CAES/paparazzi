@@ -11,11 +11,13 @@ install:
   - sudo add-apt-repository ppa:avsm/ppa -y
   - sudo apt-get update -q
   - sudo apt-get install opam
-  - opam init -q -n
+  - opam init -q -y
   - eval `opam config env`
   - opam switch 4.01.0
+  - eval `opam config env`
   - opam pin add paparazzi https://github.com/paparazzi/opam-paparazzi.git -y
 script:
+  - eval `opam config env`
   - make test
 
 notifications:
